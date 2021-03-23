@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput} from 'react-native';
-import {} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const login = () => {
+const register1 = props => {
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -87,15 +87,20 @@ const login = () => {
               marginBottom: 10,
               marginTop: 20,
             }}>
-            <Text
-              style={{
-                fontSize: 22,
-                textAlign: 'center',
-                padding: 10,
-                color: 'white',
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('Register2');
               }}>
-              Register
-            </Text>
+              <Text
+                style={{
+                  fontSize: 22,
+                  textAlign: 'center',
+                  padding: 10,
+                  color: 'white',
+                }}>
+                Register
+              </Text>
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={{color: '#383838'}}>
@@ -118,7 +123,7 @@ const login = () => {
   );
 };
 
-export default login;
+export default register1;
 
 const styles = StyleSheet.create({
   container: {
