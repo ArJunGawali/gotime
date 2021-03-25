@@ -4,6 +4,7 @@ import login from '../screen/auth/login/login';
 import register1 from '../screen/auth/register/register1';
 import register2 from '../screen/auth/register/register2';
 import register3 from '../screen/auth/register/register3';
+import home from '../screen/home';
 const defaultNav = {
   headerShown: false,
 };
@@ -40,12 +41,22 @@ const Register3Stack = createStackNavigator(
   },
 );
 
+const HomeStack = createStackNavigator(
+  {
+    home: home,
+  },
+  {
+    defaultNavigationOptions: defaultNav,
+  },
+);
+
 const MainNavigator = createStackNavigator(
   {
     Register1: Register1Stack,
     Register2: Register2Stack,
     Register3: Register3Stack,
     Login: LoginStack,
+    Home: HomeStack,
   },
   {
     defaultNavigationOptions: defaultNav,

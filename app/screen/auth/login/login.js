@@ -1,10 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import {} from 'react-native-gesture-handler';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const login = () => {
+const login = props => {
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -71,15 +77,20 @@ const login = () => {
               width: '100%',
               marginVertical: 10,
             }}>
-            <Text
-              style={{
-                fontSize: 22,
-                textAlign: 'center',
-                padding: 10,
-                color: 'white',
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('Home');
               }}>
-              Login
-            </Text>
+              <Text
+                style={{
+                  fontSize: 22,
+                  textAlign: 'center',
+                  padding: 10,
+                  color: 'white',
+                }}>
+                Login
+              </Text>
+            </TouchableOpacity>
           </View>
           <View>
             <Text>or login using social media</Text>
