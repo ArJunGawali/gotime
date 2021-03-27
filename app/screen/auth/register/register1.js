@@ -115,7 +115,12 @@ const register1 = props => {
         <View>
           <Text style={{color: 'white', marginTop: 15}}>
             Already have an account ?{' '}
-            <Text style={{color: '#cbd94c'}}>Login</Text>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('Register1');
+              }}>
+              <Text style={{color: '#cbd94c'}}>Login</Text>
+            </TouchableOpacity>
           </Text>
         </View>
       </LinearGradient>
