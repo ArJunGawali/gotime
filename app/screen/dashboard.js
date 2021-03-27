@@ -110,7 +110,8 @@ export default class dashboard extends Component {
               </View>
             </View>
 
-            <View style={{marginStart: 20, flexDirection: 'row'}}>
+            <View
+              style={{marginStart: 20, borderRadius: 10, flexDirection: 'row'}}>
               <View style={styles.eventImgContainer}>
                 <Image
                   source={require('../pics/football.jpeg')}
