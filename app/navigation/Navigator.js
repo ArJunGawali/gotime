@@ -9,6 +9,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import {Text, View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import Drawer from './drawer';
 
 const defaultNav = {
   headerShown: false,

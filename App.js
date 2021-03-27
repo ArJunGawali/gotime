@@ -2,9 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, View, Button, Image, ScrollView} from 'react-native';
 
 import MainNavigator from './app/navigation/Navigator';
+import DrawerNavigator from './app/navigation/drawer';
 
 const App = () => {
   return <MainNavigator />;
+  // return <DrawerNavigator />;
 };
 
 export default App;

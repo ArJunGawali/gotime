@@ -34,7 +34,11 @@ export default class dashboard extends Component {
               <Text style={{marginStart: 10, fontSize: 16}}>
                 Your selected categories
               </Text>
-              <TouchableOpacity style={styles.editCategory}>
+              <TouchableOpacity
+                style={styles.editCategory}
+                onPress={() => {
+                  this.props.navigation.navigate('Category');
+                }}>
                 <Text>Edit</Text>
               </TouchableOpacity>
             </View>
