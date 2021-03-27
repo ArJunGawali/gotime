@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import {Avatar} from 'react-native-elements';
 
@@ -14,7 +15,55 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AvatarImage from '../../../pics/images.png';
 
+const allImages = [
+  {
+    image: require('../../../pics/download.jpeg'),
+    title: 'cricket',
+    marked: false,
+  },
+  {
+    image: require('../../../pics/football.jpeg'),
+    title: 'football',
+    marked: false,
+  },
+  {
+    image: require('../../../pics/tennis.jpeg'),
+    title: 'tennis',
+    marked: false,
+  },
+  {
+    image: require('../../../pics/basketball.jpeg'),
+    title: 'basketball',
+    marked: false,
+  },
+  {
+    image: require('../../../pics/download.jpeg'),
+    title: 'cricket',
+    marked: false,
+  },
+  {
+    image: require('../../../pics/football.jpeg'),
+    title: 'football',
+    marked: false,
+  },
+  {
+    image: require('../../../pics/tennis.jpeg'),
+    title: 'tennis',
+    marked: false,
+  },
+  {
+    image: require('../../../pics/basketball.jpeg'),
+    title: 'basketball',
+    marked: false,
+  },
+];
+
 const register3 = props => {
+  const renderImage = ({item}) => {
+    return (
+      <Image source={item.image} style={{height: 100, width: 100, margin: 5}} />
+    );
+  };
   return (
     <ScrollView style={styles.container}>
       <LinearGradient
@@ -80,48 +129,14 @@ const register3 = props => {
             paddingLeft: 20,
           }}>
           <ScrollView horizontal={true}>
-            <View>
-              <Image
-                source={require('../../../pics/download.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-
-              <Image
-                source={require('../../../pics/football.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-            </View>
-            <View>
-              <Image
-                source={require('../../../pics/tennis.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-              <Image
-                source={require('../../../pics/basketball.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-            </View>
-            <View>
-              <Image
-                source={require('../../../pics/download.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-              <Image
-                source={require('../../../pics/football.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-            </View>
-            <View>
-              <Image
-                source={require('../../../pics/tennis.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-              <Image
-                source={require('../../../pics/basketball.jpeg')}
-                style={{height: 100, width: 100}}
-              />
-            </View>
+            <FlatList
+              data={allImages}
+              numColumns={allImages.length / 2}
+              // horizontal={true}
+              renderItem={renderImage}
+            />
           </ScrollView>
+
           <View
             style={{
               backgroundColor: '#fc6a4f',

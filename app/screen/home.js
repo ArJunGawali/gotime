@@ -3,7 +3,8 @@ import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Avatar} from 'react-native-elements';
 import AvatarImage from '../pics/images.png';
-const home = () => {
+import {TouchableOpacity} from 'react-native-gesture-handler';
+const home = props => {
   return (
     <ScrollView style={styles.container}>
       <LinearGradient
@@ -46,9 +47,24 @@ const home = () => {
                 marginHorizontal: 50,
               }}></View>
             <View>
-              <Text style={{fontWeight: 'bold', marginLeft: 15}}>
-                Your Selected Categories
-              </Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}>
+                <Text style={{fontWeight: 'bold', marginLeft: 15}}>
+                  Your Selected Categories
+                </Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    props.navigation.navigate('Category');
+                  }}>
+                  <Text
+                    style={{fontWeight: 'bold', fontSize: 18, marginRight: 25}}>
+                    +
+                  </Text>
+                </TouchableOpacity>
+              </View>
               <ScrollView horizontal={true} style={{margin: 5}}>
                 <View
                   style={{

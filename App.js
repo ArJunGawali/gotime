@@ -11,147 +11,148 @@ export default App;
 
 const styles = StyleSheet.create({});
 
-// import React from 'react';
-// import {StyleSheet, Text, View, ScrollView} from 'react-native';
+// import React, {useState} from 'react';
+// import {
+//   StyleSheet,
+//   Image,
+//   Text,
+//   View,
+//   ScrollView,
+//   TouchableOpacity,
+// } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
 // import {Avatar} from 'react-native-elements';
 // import AvatarImage from './app/pics/images.png';
+// import {FlatList} from 'react-native-gesture-handler';
+// const allImages = [
+//   {
+//     image: require('./app/pics/download.jpeg'),
+//     title: 'cricket',
+//     marked: false,
+//   },
+//   {
+//     image: require('./app/pics/football.jpeg'),
+//     title: 'football',
+//     marked: false,
+//   },
+//   {
+//     image: require('./app/pics/tennis.jpeg'),
+//     title: 'tennis',
+//     marked: false,
+//   },
+//   {
+//     image: require('./app/pics/basketball.jpeg'),
+//     title: 'basketball',
+//     marked: false,
+//   },
+//   {
+//     image: require('./app/pics/download.jpeg'),
+//     title: 'cricket',
+//     marked: false,
+//   },
+//   {
+//     image: require('./app/pics/football.jpeg'),
+//     title: 'football',
+//     marked: false,
+//   },
+//   {
+//     image: require('./app/pics/tennis.jpeg'),
+//     title: 'tennis',
+//     marked: false,
+//   },
+//   {
+//     image: require('./app/pics/basketball.jpeg'),
+//     title: 'basketball',
+//     marked: false,
+//   },
+// ];
+// const selectedImage = [];
+// const pressHandler = (item, selectedImage) => {
+//   if (selectedImage.indexOf(item) === -1) {
+//     selectedImage.push(item);
+//     console.log(selectedImage);
+//   }
+// };
 // const App = () => {
+//   const renderImage = ({item}) => {
+//     let isSelected = selectedImage.indexOf(item) === -1 ? false : true;
+//     return (
+//       <TouchableOpacity onPress={pressHandler(item, selectedImage)}>
+//         <View
+//           style={{
+//             borderRadius: 10,
+//             borderWidth: 1,
+//             borderColor: '#fc6a4f',
+//             elevation: 5,
+//             margin: 10,
+//             backgroundColor: 'white',
+//             shadowColor: '#fc6a4f',
+//           }}>
+//           <Image
+//             source={item.image}
+//             style={{width: 110, height: 110, margin: 10}}
+//           />
+
+//           <Text
+//             style={{
+//               marginBottom: 10,
+//               textAlign: 'center',
+//               fontWeight: 'bold',
+//             }}>
+//             {item.title}
+//           </Text>
+//         </View>
+//       </TouchableOpacity>
+//     );
+//   };
 //   return (
 //     <ScrollView style={styles.container}>
 //       <LinearGradient
 //         colors={['#fc6a4f', '#1f4185']}
 //         style={{flex: 1, alignItems: 'center'}}>
-//         <View style={{width: '100%', minHeight: 747}}>
-//           <View
+//         <View style={{width: '100%', Height: 747}}>
+//           <Text
 //             style={{
-//               margin: 10,
 //               alignSelf: 'center',
-//               top: 70,
-//               zIndex: 1,
-//               position: 'absolute',
+//               color: 'white',
+//               fontWeight: 'bold',
+//               marginTop: 30,
+//               marginBottom: 20,
 //             }}>
-//             <Avatar size="xlarge" rounded source={AvatarImage} />
-//           </View>
+//             Choose Multiple Categories
+//           </Text>
 
+//           <ScrollView
+//             contentContainerStyle={{alignItems: 'center'}}
+//             style={{
+//               alignSelf: 'center',
+//               backgroundColor: 'white',
+//               height: 600,
+//               borderRadius: 15,
+//               width: '90%',
+//               paddingVertical: 10,
+//             }}>
+//             <FlatList
+//               data={allImages}
+//               renderItem={renderImage}
+//               numColumns="2"
+//             />
+//           </ScrollView>
 //           <View
 //             style={{
-//               backgroundColor: 'white',
-//               marginHorizontal: 10,
-//               minHeight: 687,
-//               top: 160,
-//               borderTopEndRadius: 20,
-//               borderTopStartRadius: 20,
-//               paddingTop: 80,
+//               backgroundColor: '#fc6a4f',
+//               width: '30%',
+//               alignSelf: 'center',
+//               margin: 20,
+//               padding: 10,
+//               borderRadius: 40,
+//               elevation: 5,
+//               shadowColor: 'white',
 //             }}>
 //             <Text
-//               style={{fontSize: 24, fontWeight: 'bold', textAlign: 'center'}}>
-//               Welcome Raj
+//               style={{color: 'white', fontWeight: 'bold', textAlign: 'center'}}>
+//               DONE
 //             </Text>
-//             <Text style={{fontSize: 14, textAlign: 'center'}}>
-//               raj@gmail.com
-//             </Text>
-//             <View
-//               style={{
-//                 borderColor: 'grey',
-//                 borderWidth: 1,
-//                 marginVertical: 10,
-//                 marginHorizontal: 50,
-//               }}></View>
-//             <View>
-//               <Text style={{fontWeight: 'bold', marginLeft: 15}}>
-//                 Your Selected Categories
-//               </Text>
-//               <ScrollView horizontal={true} style={{margin: 5}}>
-//                 <View
-//                   style={{
-//                     margin: 10,
-//                   }}>
-//                   <Avatar
-//                     size="large"
-//                     rounded
-//                     source={require('./app/pics/download.jpeg')}
-//                   />
-//                   <Text style={{textAlign: 'center'}}>Cricket</Text>
-//                 </View>
-//                 <View
-//                   style={{
-//                     margin: 10,
-//                   }}>
-//                   <Avatar
-//                     size="large"
-//                     rounded
-//                     source={require('./app/pics/football.jpeg')}
-//                   />
-//                   <Text style={{textAlign: 'center'}}>FootBall</Text>
-//                 </View>
-//               </ScrollView>
-//             </View>
-
-//             <View>
-//               <Text style={{fontWeight: 'bold', marginLeft: 15}}>
-//                 New Events
-//               </Text>
-
-//               {/* events  */}
-//               <View
-//                 style={{
-//                   backgroundColor: '#fc6a4f',
-//                   margin: 10,
-//                   borderRadius: 40,
-//                 }}>
-//                 <View
-//                   style={{
-//                     margin: 10,
-//                     flexDirection: 'row',
-//                   }}>
-//                   <Avatar size="medium" rounded source={AvatarImage} />
-//                   <View style={{marginLeft: 10, justifyContent: 'center'}}>
-//                     <Text
-//                       style={{
-//                         fontSize: 15,
-//                         fontWeight: 'bold',
-//                         color: 'white',
-//                       }}>
-//                       No Event Created Yet
-//                     </Text>
-//                     <Text style={{color: 'white'}}>No Events</Text>
-//                   </View>
-//                 </View>
-//               </View>
-//             </View>
-//             <View>
-//               <Text style={{fontWeight: 'bold', marginLeft: 15}}>
-//                 New Events
-//               </Text>
-
-//               {/* Challanges */}
-//               <View
-//                 style={{
-//                   backgroundColor: '#1f4185',
-//                   margin: 10,
-//                   borderRadius: 40,
-//                 }}>
-//                 <View
-//                   style={{
-//                     margin: 10,
-//                     flexDirection: 'row',
-//                   }}>
-//                   <Avatar size="medium" rounded source={AvatarImage} />
-//                   <View style={{marginLeft: 10, justifyContent: 'center'}}>
-//                     <Text
-//                       style={{
-//                         fontSize: 15,
-//                         fontWeight: 'bold',
-//                         color: 'white',
-//                       }}>
-//                       No Challenges Created Yet
-//                     </Text>
-//                     <Text style={{color: 'white'}}>No Challenge</Text>
-//                   </View>
-//                 </View>
-//               </View>
-//             </View>
 //           </View>
 //         </View>
 //       </LinearGradient>
@@ -161,4 +162,9 @@ const styles = StyleSheet.create({});
 
 // export default App;
 
-// const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({
+//   container: {
+//     height: 687,
+//     width: '100%',
+//   },
+// });
